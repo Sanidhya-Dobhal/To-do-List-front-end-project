@@ -1,0 +1,51 @@
+*{
+    margin:0;
+}
+body{
+    height:100vh;
+    background-image:radial-gradient(rgb(255, 255, 255),rgb(75, 69, 69));
+}
+.input
+{
+    display:block;
+    margin:3vh auto;
+    width:35vw;
+    /* border-radius:1vw; */
+}
+label{
+    display:block;
+    margin-left:6vw;
+    font-size:20px;
+}
+textarea{
+    height:45px;
+}
+header{
+    height:8vh;
+    background-color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+header p{
+    color:white;
+    font-size:35px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+button{
+    background-color:#4681f4;
+    border-radius:20px;
+    position:relative;
+    left:12.5vw;
+    width:50px;
+}
+#flex_about_inputs{
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content:space-around;
+}
+.children{
+    width:47vw;
+    border:2px solid black;
+    /* background-color:white; */
+}
