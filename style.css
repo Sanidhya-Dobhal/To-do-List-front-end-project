@@ -1,9 +1,10 @@
 *{
     margin:0;
+    padding: 0;
 }
 body{
     height:100vh;
-    background-image:radial-gradient(rgb(255, 255, 255),rgb(75, 69, 69));
+    background-color:rgb(240,240,255);
 }
 .input
 {
@@ -35,9 +36,17 @@ header p{
 button{
     background-color:#4681f4;
     border-radius:20px;
+    color:white;
+}
+button:hover{
+    cursor:pointer;
+}
+#add_submit{
     position:relative;
-    left:12.5vw;
-    width:50px;
+    left:6vw;
+    width:100px;
+    height:30px;
+    margin-bottom:20px;
 }
 #flex_about_inputs{
     display:flex;
@@ -46,6 +55,117 @@ button{
 }
 .children{
     width:47vw;
-    border:2px solid black;
-    /* background-color:white; */
+    box-shadow:5px 5px 5px black;
+    background-color:white;
+}
+.box-title{
+    text-align:center;
+    font-size:2vw;
+    font-weight:700;
+}
+table{
+    width:80vw;
+    margin:0 auto;
+    background-color:rgb(239, 243, 213);
+}
+table tr{
+    animation-name :rowadd;
+    animation-duration:0.5s;
+}
+table tr th,td{
+    border-right:5px solid black;
+    border-top:5px solid black;
+}
+table tr th{
+    height:40px;
+    font-size:25px;
+}
+table tr td{
+    height:25px;
+    font-size:17px;
+}
+table tr td:nth-child(1){
+    border-left:5px solid black;
+}
+table tr th:nth-child(1){
+    width:5vw;
+    border-left:5px solid black;
+}
+td{
+    text-align:center;
+}
+#congo{
+    text-align:center;
+    color:rgb(0, 212, 0);
+    opacity:1;
+    font-size:2vw;
+    animation-name:congo_ani;
+    animation-duration:2s;
+    /* animation-timing-function:ease-out; */
+}
+.deleting{
+    height:25px;
+    opacity:1;
+    animation-name:removal;
+    animation-duration:1s;
+    animation-timing-function:linear;
+}
+@keyframes removal
+{
+    from{
+        border-right:5px solid black;
+        border-top:5px solid black;
+        height:25px;
+        font-size:17px;
+        opacity:1;
+    }
+    to{
+        border-right:1px solid black;
+        border-top:1px solid black; 
+        height:1px;
+        font-size:0px;
+        opacity:0;
+    }
+}
+@keyframes congo_ani
+{
+    0%{
+        opacity:0;
+        font-size:0vw;
+    }
+    20%{
+        opacity:1;
+        font-size:3vw;
+    }
+    35%{
+        font-size:2vw;
+    }
+    50%{
+        font-size:2.5vw;
+    }
+    65%{
+        font-size:1.8vw;
+    }
+    75%{
+        font-size:2.2vw;
+    }
+    85%{
+        font-size:1.9vw;
+    }
+    93%{
+        font-size:2.1vw;
+    }
+    100%{
+        font-size:2vw;
+    }
+}
+@keyframes rowadd
+{
+    from
+    {
+        opacity:0;
+    }
+    to{
+        opacity :1;
+    }
 }
