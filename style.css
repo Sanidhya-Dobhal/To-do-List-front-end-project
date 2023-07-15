@@ -99,25 +99,30 @@ table tr th {
     height: 40px;
     font-size: 25px;
 }
-
 table tr td {
     height: 25px;
     font-size: 17px;
-    width:20vw;
-    word-break:break-all;
+    word-break:break-word;
 }
 table tr td p{
     width:20vw;
 }
 
-
 table tr td:nth-child(1) {
+    width: 7vw;
     border-left: 5px solid black;
 }
 
 table tr th:nth-child(1) {
-    width: 5vw;
+    width: 7vw;
     border-left: 5px solid black;
+}
+table tr td:nth-child(4) {
+    width: 10vw;
+}
+
+table tr th:nth-child(4) {
+    width: 10vw;
 }
 
 td {
@@ -131,7 +136,6 @@ td {
     font-size: 2vw;
     animation-name: congo_ani;
     animation-duration: 2s;
-    /* animation-timing-function:ease-out; */
 }
 
 .deleting {
@@ -230,17 +234,19 @@ td {
     }
 }
 
-#msg {
-    text-align: center;
-    font-size: 2vw;
-    color: green;
-}
-
 .msgcls {
+    text-align: center;
+    color: rgb(0, 212, 0);
+    font-size:2vw;
     opacity: 1;
     animation-name: clr_animation;
     animation-duration: 1s;
     animation-timing-function: ease-in;
+}
+#msg {
+    text-align: center;
+    font-size: 2vw;
+    color: green;
 }
 
 @keyframes clr_animation {
@@ -257,8 +263,16 @@ td {
     .box-title {
         font-size: 23px;
     }
+    #msg{
+        font-size: 22px;
+    }
+    .msgcls{
+        font-size:22px;
+    }
+    #congo{
+        font-size:22px;
+    }
 }
-
 @media screen and (max-width:720px) {
     .children {
         margin: auto;
@@ -293,7 +307,6 @@ td {
     #clr_button{
         left:10vw;
     }
-
 }
 @media screen and (max-width:575px) {
     .box-title {
@@ -304,5 +317,9 @@ td {
     {
         .input{
             width:272px;
+        }
+        table tr th {
+            height: 40px;
+            font-size: 20px;
         }
     }

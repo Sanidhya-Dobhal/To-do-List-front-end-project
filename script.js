@@ -12,6 +12,10 @@ function populate() {
         if (document.getElementById("msg") != null) {
             main.removeChild(document.getElementById("msg"));
         }
+        if(document.getElementsByClassName("msgcls").length != 0)
+        {
+            main.removeChild(document.getElementsByClassName("msgcls")[0]);
+        }
         if (document.getElementById("task_table") == null){
             let clr = document.createElement("button");
             clr.setAttribute("class","add_clr");
@@ -34,8 +38,8 @@ function populate() {
             let row = document.createElement("tr");
             i++;
             row.innerHTML = `<td>${i}</td>
-        <td><p>${(document.getElementById("name")).value}</p></td>
-        <td><p>${document.getElementById("desc").value}</p></td>
+        <td>${(document.getElementById("name")).value}</td>
+        <td>${document.getElementById("desc").value}</td>
         <td><button class ="delete_button">Done</button></td>`;
             document.getElementById("task_table").appendChild(row);
         }
@@ -57,6 +61,11 @@ function populate() {
 function clr_tab(){
     if(confirm("are you sure you want to clear the list ?")){
     document.getElementById("inputs").removeChild(document.getElementById("clr_button"));
+    var buttons = document.getElementsByTagName("button");
+    for(k =0;k<buttons.length;k++)
+            {
+                buttons[k].disabled =true; 
+            }
     document.getElementsByTagName("table")[0].classList.add("rem_ani");
     let msg = document.createElement("p");
     msg.setAttribute("id","msg");
@@ -65,6 +74,10 @@ function clr_tab(){
         main.removeChild(document.getElementsByTagName("table")[0]);
         msg.innerText ="The list has been cleared !";
         document.getElementById("msg").classList.add("msgcls");
+        for(k =0;k<buttons.length;k++)
+        {
+            buttons[k].disabled =false; 
+        }
     },1000)
     i=0;
 }
@@ -117,7 +130,12 @@ function delete_table()//This function will delete the table everytime all the t
 {
     main.removeChild(document.getElementsByTagName("table")[0]);
     const para = document.createElement("p");
-    para.setAttribute("id", "congo");
+    if(window.innerWidth>1100){
+        para.setAttribute("id", "congo");
+    }
+    else{
+        para.setAttribute("class","msgcls");
+    }
     para.innerText = "Congratulations! you have completed all your tasks \uD83E\uDD73";
     main.appendChild(para);
 }
