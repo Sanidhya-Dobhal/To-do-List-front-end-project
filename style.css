@@ -1,171 +1,308 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
 }
-body{
-    height:100vh;
-    background-color:rgb(240,240,255);
+
+body {
+    background-color: rgb(240, 240, 255);
 }
-.input
-{
-    display:block;
-    margin:3vh auto;
-    width:35vw;
+
+#topspace {
+    height: 25px;
+}
+
+.input {
+    display: block;
+    margin: 3vh auto;
+    width: 35vw;
     /* border-radius:1vw; */
 }
-label{
-    display:block;
-    margin-left:6vw;
-    font-size:20px;
+
+label {
+    display: block;
+    margin-left: 6vw;
+    font-size: 20px;
 }
-textarea{
-    height:45px;
+
+textarea {
+    height: 45px;
 }
-header{
-    height:8vh;
-    background-color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+header {
+    height: 8vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-header p{
-    color:white;
-    font-size:35px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+
+header p {
+    color: white;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-button{
-    background-color:#4681f4;
-    border-radius:20px;
-    color:white;
+
+button {
+    background-color: #4681f4;
+    border-radius: 20px;
+    color: white;
 }
-button:hover{
-    cursor:pointer;
+
+button:hover {
+    cursor: pointer;
 }
-#add_submit{
-    position:relative;
-    left:6vw;
-    width:100px;
-    height:30px;
-    margin-bottom:20px;
+
+.add_clr {
+    position: relative;
+    left: 6vw;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
 }
-#flex_about_inputs{
-    display:flex;
-    flex-direction:row-reverse;
-    justify-content:space-around;
+
+#flex_about_inputs {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
 }
-.children{
-    width:47vw;
-    box-shadow:5px 5px 5px black;
-    background-color:white;
+
+.children {
+    width: 47vw;
+    box-shadow: 5px 5px 5px black;
+    background-color: white;
 }
-.box-title{
-    text-align:center;
-    font-size:2vw;
-    font-weight:700;
+
+.box-title {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 700;
 }
-table{
-    width:80vw;
-    margin:0 auto;
-    background-color:rgb(239, 243, 213);
+
+table {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: rgb(239, 243, 213);
 }
-table tr{
-    animation-name :rowadd;
-    animation-duration:0.5s;
+
+table tr {
+    animation-name: rowadd;
+    animation-duration: 0.5s;
+    width:20vw;
 }
-table tr th,td{
-    border-right:5px solid black;
-    border-top:5px solid black;
+
+table tr th,td {
+    border-right: 5px solid black;
+    border-top: 5px solid black;
 }
-table tr th{
-    height:40px;
-    font-size:25px;
+
+table tr th {
+    height: 40px;
+    font-size: 25px;
 }
-table tr td{
-    height:25px;
-    font-size:17px;
+
+table tr td {
+    height: 25px;
+    font-size: 17px;
+    width:20vw;
+    word-break:break-all;
 }
-table tr td:nth-child(1){
-    border-left:5px solid black;
+table tr td p{
+    width:20vw;
 }
-table tr th:nth-child(1){
-    width:5vw;
-    border-left:5px solid black;
+
+
+table tr td:nth-child(1) {
+    border-left: 5px solid black;
 }
-td{
-    text-align:center;
+
+table tr th:nth-child(1) {
+    width: 5vw;
+    border-left: 5px solid black;
 }
-#congo{
-    text-align:center;
-    color:rgb(0, 212, 0);
-    opacity:1;
-    font-size:2vw;
-    animation-name:congo_ani;
-    animation-duration:2s;
+
+td {
+    text-align: center;
+}
+
+#congo {
+    text-align: center;
+    color: rgb(0, 212, 0);
+    opacity: 1;
+    font-size: 2vw;
+    animation-name: congo_ani;
+    animation-duration: 2s;
     /* animation-timing-function:ease-out; */
 }
-.deleting{
-    height:25px;
-    opacity:1;
-    animation-name:removal;
-    animation-duration:1s;
-    animation-timing-function:linear;
+
+.deleting {
+    height: 25px;
+    opacity: 1;
+    animation-name: removal;
+    animation-duration: 1s;
+    animation-timing-function: linear;
 }
-@keyframes removal
-{
-    from{
-        border-right:5px solid black;
-        border-top:5px solid black;
-        height:25px;
-        font-size:17px;
-        opacity:1;
-    }
-    to{
-        border-right:1px solid black;
-        border-top:1px solid black; 
-        height:1px;
-        font-size:0px;
-        opacity:0;
-    }
+#clr_button{
+    left:7vw;
 }
-@keyframes congo_ani
-{
-    0%{
-        opacity:0;
-        font-size:0vw;
+
+@keyframes removal {
+    from {
+        border-right: 5px solid black;
+        border-top: 5px solid black;
+        height: 25px;
+        font-size: 17px;
+        opacity: 1;
     }
-    20%{
-        opacity:1;
-        font-size:3vw;
-    }
-    35%{
-        font-size:2vw;
-    }
-    50%{
-        font-size:2.5vw;
-    }
-    65%{
-        font-size:1.8vw;
-    }
-    75%{
-        font-size:2.2vw;
-    }
-    85%{
-        font-size:1.9vw;
-    }
-    93%{
-        font-size:2.1vw;
-    }
-    100%{
-        font-size:2vw;
+
+    to {
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        height: 1px;
+        font-size: 0px;
+        opacity: 0;
     }
 }
-@keyframes rowadd
-{
-    from
+
+@keyframes congo_ani {
+    0% {
+        opacity: 0;
+        font-size: 0vw;
+    }
+
+    20% {
+        opacity: 1;
+        font-size: 3vw;
+    }
+
+    35% {
+        font-size: 2vw;
+    }
+
+    50% {
+        font-size: 2.5vw;
+    }
+
+    65% {
+        font-size: 1.8vw;
+    }
+
+    75% {
+        font-size: 2.2vw;
+    }
+
+    85% {
+        font-size: 1.9vw;
+    }
+
+    93% {
+        font-size: 2.1vw;
+    }
+
+    100% {
+        font-size: 2vw;
+    }
+}
+
+@keyframes rowadd {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.rem_ani {
+    opacity: 0;
+    animation-name: clr_ani;
+    animation-duration: 1s;
+    animation-timing-function: eas-out;
+}
+
+@keyframes clr_ani {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#msg {
+    text-align: center;
+    font-size: 2vw;
+    color: green;
+}
+
+.msgcls {
+    opacity: 1;
+    animation-name: clr_animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes clr_animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .box-title {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .children {
+        margin: auto;
+        width: 90vw;
+    }
+
+    #flex_about_inputs {
+        flex-direction: column;
+    }
+
+    .box-title {
+        font-size: 4vw;
+    }
+
+    #inputs {
+        margin-top: 40px;
+    }
+
+    #topspace {
+        height: 5px;
+    }
+
+    .input {
+        width:70vw;
+    }
+    label{
+        margin-left:10vw;
+    }
+    .add_clr {
+        left:10vw;
+    }
+    #clr_button{
+        left:10vw;
+    }
+
+}
+@media screen and (max-width:575px) {
+    .box-title {
+        font-size: 23px;
+    }
+    }
+    @media screen and (max-width:389px)
     {
-        opacity:0;
+        .input{
+            width:272px;
+        }
     }
-    to{
-        opacity :1;
-    }
-}

@@ -8,12 +8,11 @@
     <link href="style.css" rel="stylesheet">
     <script src = script.js defer></script>
 </head>
-
 <body>
     <header>
         <p>To-do List</p>
     </header>
-    <div style="height:25px">
+    <div id ="topspace">
 
     </div>
     <main id ="main">
@@ -21,7 +20,7 @@
             <div id="about" class ="children">
                 <p class = "box-title">About</p>
                 <div style = "height:20px;"></div>
-                <p>This is a To-do list/Task Manager which allows you to add tasks to be done to the list through the task window. The tasks are arranged chronologically based on the order you add them. <br>Once the task has been completed simply mark it as "done" and watch it vanish from your list. <br>Stay Organised &#x1F44D; !!</p>
+                <p style ="margin :auto 20px;">This is a To-do list/Task Manager which allows you to add tasks to be done to the list through the task window. The tasks are arranged chronologically based on the order you add them. <br>Once the task has been completed simply mark it as "done" and watch it vanish from your list. <br>Stay Organised &#x1F44D; !!</p>
             </div>
         <div id="inputs" class ="children">
             <p class="box-title">Task</p>
@@ -29,7 +28,7 @@
             <input type="text" id="name" class="input">
             <label for="desc">Description</label>
             <textarea class="input" id="desc"></textarea>
-            <button id ="add_submit">Add</button>
+            <button class ="add_clr" id ="add_submit">Add</button>
         </div>
     </div>
     <div style = "height:30px;">
