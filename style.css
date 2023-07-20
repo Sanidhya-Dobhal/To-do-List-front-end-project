@@ -104,10 +104,6 @@ table tr td {
     font-size: 17px;
     word-break:break-word;
 }
-table tr td p{
-    width:20vw;
-}
-
 table tr td:nth-child(1) {
     width: 7vw;
     border-left: 5px solid black;
@@ -120,11 +116,9 @@ table tr th:nth-child(1) {
 table tr td:nth-child(4) {
     width: 10vw;
 }
-
 table tr th:nth-child(4) {
     width: 10vw;
 }
-
 td {
     text-align: center;
 }
@@ -221,7 +215,7 @@ td {
     opacity: 0;
     animation-name: clr_ani;
     animation-duration: 1s;
-    animation-timing-function: eas-out;
+    animation-timing-function: ease-out;
 }
 
 @keyframes clr_ani {

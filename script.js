@@ -53,7 +53,7 @@ function populate() {
             document.getElementById("task_table").appendChild(row);
         }
         document.getElementsByClassName("delete_button")[i - 1].addEventListener("click", task_done);
-        // document.getElementsByTagName("input")[0].value = null;//after each task is added the task input is 
+        document.getElementsByTagName("input")[0].value = null;//after each task is added the task input is 
         document.getElementsByTagName("textarea")[0].value = null;//cleared and made empty for the next task
 
     }
@@ -105,7 +105,7 @@ function task_done(event) {
             {
                 buttons[k].disabled =false; 
             }
-            }, 1000);
+            }, 999);
             i--;
             break;
         }
