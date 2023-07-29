@@ -90,10 +90,8 @@ function task_done(event) {
             let k = 0;
             all_del[j].classList.add("deleting");
             all_del[j].outerHTML = "<p style = background-color:white;>&#128077</p>";
-            for (k = 0; k < 4; k++) {
-                console.log(del_row.children[k]);
+            for (k = 0; k < 4; k++) 
                 del_row.children[k].classList.add("deleting");
-            }
             var buttons = document.getElementsByTagName("button");
             for(k =0;k<buttons.length;k++)
             {
