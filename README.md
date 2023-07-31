@@ -41,6 +41,14 @@ Alternatively, you can also host the application on a web server of your choice.
 3. Click the "Add" button to add the task to your to-do list.
 4. Once you complete a task, mark it as "done" to remove it from the list.
 
+## Demo Video
+
+
+
+https://github.com/Sanidhya-Dobhal/To-do-List-front-end-project/assets/118712234/5680fd0b-5017-47b1-85b2-513d50532c06
+
+
+
 ## Screenshots
 
 ### For bigger display screens like laptops and desktops
