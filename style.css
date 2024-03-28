@@ -26,6 +26,7 @@ label {
 
 textarea {
     height: 45px;
+    resize:none;
 }
 
 header {
