@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
-    <link href="style.css" rel="stylesheet">
-    <script src = script.js defer></script>
-</head>
-<body>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
     <header>
-        <p>To-do List</p>
+      <p>To-do List</p>
     </header>
-    <div id ="topspace">
-
-    </div>
-    <main id ="main">
-        <div id = "flex_about_inputs">
-            <div id="about" class ="children">
-                <p class = "box-title">About</p>
-                <div style = "height:20px;"></div>
-                <p style ="margin :auto 20px;">This is a To-do list/Task Manager which allows you to add tasks to be done to the list through the task window. The tasks are arranged chronologically based on the order you add them. <br>Once the task has been completed simply mark it as "done" and watch it vanish from your list. <br>Stay Organised &#x1F44D; !!</p>
-            </div>
-        <div id="inputs" class ="children">
-            <p class="box-title">Task</p>
-            <label for="name">Name</label>
-            <input type="text" id="name" class="input">
-            <label for="desc">Description</label>
-            <textarea class="input" id="desc"></textarea>
-            <button class ="add_clr" id ="add_submit">Add</button>
+    <main id="main">
+      <div id="flex-about-inputs">
+        <div id="about" class="children">
+          <p class="box-title">About</p>
+          <p style="margin: 20px">
+            <b>Never forget a thing!</b> This is a To-do list/Task Manager lets
+            you add tasks to be done to the list through the task window. The
+            tasks are arranged chronologically in the order you add them.
+            <br />Once the task has been completed simply mark it as "done" and
+            watch it vanish from your list. <br />Stay Organised &#x1F44D; !!
+          </p>
         </div>
-    </div>
-    <div style = "height:30px;">
-    </div>
+        <div id="inputs" class="children">
+          <p class="box-title">Task</p>
+          <label for="name">Name</label>
+          <input type="text" class="input-fields" id="name" />
+          <label for="desc">Description</label>
+          <textarea class="input-fields" id="desc"></textarea>
+          <button class="add-clr" id="add_submit">Add</button>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
