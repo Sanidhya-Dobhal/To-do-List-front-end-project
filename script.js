@@ -1,10 +1,13 @@
-var arr;
+let allTaskArr=[];
 let button = document.getElementById("add_submit");
-button.addEventListener("click", populate);
+button.addEventListener("click", addTask);
+document
+  .getElementById("name")
+  .addEventListener("keypress",onClickTaskNameHandler);
 const main = document.getElementById("main");
 let i = 0;
 let j;
-function populate() {
+function addTask() {
   if (document.getElementById("name").value != "") {
     if (document.getElementById("congo") != null) {
       main.removeChild(document.getElementById("congo"));
@@ -15,52 +18,50 @@ function populate() {
     if (document.getElementsByClassName("msgcls").length != 0) {
       main.removeChild(document.getElementsByClassName("msgcls")[0]);
     }
-    if (document.getElementById("task_table") == null) {
+    if (document.getElementById("task-table") == null) {
       let clr = document.createElement("button");
       clr.setAttribute("class", "add-clr");
-      clr.setAttribute("id", "clr_button");
+      clr.setAttribute("id", "clr-button");
       clr.innerText = "Clear List";
       document.getElementById("inputs").appendChild(clr);
-      let clr_button = document.getElementById("clr_button");
-      clr_button.addEventListener("click", clr_tab);
+      let clr_button = document.getElementById("clr-button");
+      clr_button.addEventListener("click", clearTable);
       let table = document.createElement("table");
       table.setAttribute("cellspacing", "0px");
-      table.setAttribute("id", "task_table");
+      table.setAttribute("id", "task-table");
       table.innerHTML += `<tr>
         <th>S.No.</th>
-        <th>Task name.</th>
+        <th>Task name</th>
         <th>Description</th>
         <th>Actions</th>
         </tr>`;
       main.appendChild(table);
-      let row = document.createElement("tr");
-      i++;
-      row.innerHTML = `<td>${i}</td>
-        <td>${document.getElementById("name").value}</td>
-        <td>${document.getElementById("desc").value}</td>
-        <td><button class ="delete_button">Done</button></td>`;
-      document.getElementById("task_table").appendChild(row);
-    } else {
-      let row = document.createElement("tr");
-      i++;
-      row.innerHTML = `<td>${i}</td>
-        <td>${document.getElementById("name").value}</td>
-        <td>${document.getElementById("desc").value}</td>
-        <td><button class = "delete_button">Done</button></td>`;
-      document.getElementById("task_table").appendChild(row);
     }
+    // allTaskArr.push({
+    //   name: document.getElementById("name").value,
+    //   description: document.getElementById("descriptionInput").value,
+    //   type:"all",
+    // });
+    console.log(allTaskArr);
+      let row = document.createElement("tr");
+      i++;
+      row.innerHTML = `<td>${i}</td>
+        <td>${document.getElementById("name").value}</td>
+        <td>${document.getElementById("descriptionInput").value}</td>
+        <td><button class ="done-button">Done</button></td>`;
+      document.getElementById("task-table").appendChild(row);
     document
-      .getElementsByClassName("delete_button")
-      [i - 1].addEventListener("click", task_done);
+      .getElementsByClassName("done-button")
+      [i - 1].addEventListener("click", taskDone);
     document.getElementsByTagName("input")[0].value = null; //after each task is added the task input is
     document.getElementsByTagName("textarea")[0].value = null; //cleared and made empty for the next task
   }
 }
-function clr_tab() {
+function clearTable() {
   if (confirm("are you sure you want to clear the list ?")) {
     document
       .getElementById("inputs")
-      .removeChild(document.getElementById("clr_button"));
+      .removeChild(document.getElementById("clr-button"));
     var buttons = document.getElementsByTagName("button");
     for (k = 0; k < buttons.length; k++) {
       buttons[k].disabled = true;
@@ -80,8 +81,8 @@ function clr_tab() {
     i = 0;
   }
 }
-function task_done(event) {
-  const all_del = document.getElementsByClassName("delete_button");
+function taskDone(event) {
+  const all_del = document.getElementsByClassName("done-button");
   for (j = 0; j < all_del.length; j++) {
     if (all_del[j] === event.target) {
       let del_row = document.getElementsByTagName("tr")[j + 1];
@@ -94,7 +95,7 @@ function task_done(event) {
         buttons[k].disabled = true;
       }
       setTimeout(function () {
-        document.getElementById("task_table").removeChild(del_row);
+        document.getElementById("task-table").removeChild(del_row);
         for (k = 0; k < buttons.length; k++) {
           buttons[k].disabled = false;
         }
@@ -103,25 +104,25 @@ function task_done(event) {
       break;
     }
   }
-  if (document.getElementsByClassName("delete_button").length == 0) {
+  if (document.getElementsByClassName("done-button").length == 0) {
     document
       .getElementById("inputs")
-      .removeChild(document.getElementById("clr_button"));
+      .removeChild(document.getElementById("clr-button"));
   }
   setTimeout(function () {
-    while (j < document.getElementsByClassName("delete_button").length) {
+    while (j < document.getElementsByClassName("done-button").length) {
       let next_task = document.getElementsByTagName("tr")[j + 1];
       wrong_index_ele = next_task.children[0];
       wrong_index_ele.innerText = wrong_index_ele.innerText - 1;
       j++;
       let k;
     }
-    if (document.getElementsByClassName("delete_button").length == 0)
-      delete_table();
+    if (document.getElementsByClassName("done-button").length == 0)
+      deleteTable();
   }, 1000);
 }
 
-function delete_table() {
+function deleteTable() {
   //This function will delete the table everytime all the tasks have been executed
   main.removeChild(document.getElementsByTagName("table")[0]);
   const para = document.createElement("p");
@@ -133,4 +134,24 @@ function delete_table() {
   para.innerText =
     "Congratulations! you have completed all your tasks \uD83E\uDD73";
   main.appendChild(para);
+}
+function onClickTaskNameHandler(event) {
+  if (event.key === "Enter") {
+    document.getElementById("name").blur();
+    document.getElementById("descriptionInput").focus();
+  }
+}
+function selectedCategory(event) {
+  const categoryElements = document.getElementsByClassName("category-item-div");
+  for (i = 0; i < categoryElements.length; i++) {
+    if (categoryElements[i] === event.target) {
+      if (categoryElements[i].classList.contains("selected-category-item-div"))
+        categoryElements[i].classList.remove("selected-category-item-div");
+      else categoryElements[i].classList.add("selected-category-item-div");
+    }
+    else{
+      if (categoryElements[i].classList.contains("selected-category-item-div"))
+        categoryElements[i].classList.remove("selected-category-item-div");
+    }
+  }
 }

@@ -28,7 +28,7 @@ textarea {
 header {
   height: 64px;
   background-color: black;
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
@@ -37,7 +37,7 @@ header {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 button {
-  background-color: #4681f4;
+  background-color: #3B71CA;
   border-radius: 20px;
   color: white;
   font-size: 16px;
@@ -48,11 +48,11 @@ button:hover {
 }
 
 .add-clr {
-  position: relative;
-  left: 6vw;
+  margin-left: 6vw;
   width: 100px;
   height: 30px;
   margin-bottom: 20px;
+  margin-top:15px;
 }
 
 #flex-about-inputs {
@@ -62,7 +62,7 @@ button:hover {
   margin-bottom: 30px;
 }
 
-.children {
+.card {
   width: 47vw;
   box-shadow: 5px 5px 5px black;
   background-color: white;
@@ -132,7 +132,19 @@ td {
   animation-name: congo_ani;
   animation-duration: 2s;
 }
-
+#category-flex-div{
+  display:flex;
+  flex-direction:row; 
+  margin: 3vh 6vw;
+}
+.category-item-div{
+  width:25%;
+  border:2px solid black;
+  text-align:center;
+}
+.done-button{
+  padding:0px 8px;
+}
 .deleting {
   height: 25px;
   opacity: 1;
@@ -140,10 +152,10 @@ td {
   animation-duration: 1s;
   animation-timing-function: linear;
 }
-#clr_button {
-  left: 7vw;
+.selected-category-item-div{
+  color:white;
+  background-color:rgb(25,135,84);
 }
-
 @keyframes removal {
   from {
     border-right: 2px solid black;
@@ -243,6 +255,9 @@ td {
   font-size: 2vw;
   color: green;
 }
+#clr-button {
+  margin-left:1vw;
+}
 
 @keyframes clr_animation {
   from {
@@ -268,8 +283,8 @@ td {
     font-size: 22px;
   }
 }
-@media screen and (max-width: 720px) {
-  .children {
+@media screen and (max-width: 725px) {
+  .card{
     margin: auto;
     width: 90vw;
   }
@@ -293,14 +308,8 @@ td {
   .input-fields {
     width: 70vw;
   }
-  label {
+  #category-flex-div, .add-clr, label {
     margin-left: 10vw;
-  }
-  .add-clr {
-    left: 10vw;
-  }
-  #clr_button {
-    left: 10vw;
   }
 }
 @media screen and (max-width: 575px) {
@@ -316,4 +325,7 @@ td {
     height: 40px;
     font-size: 20px;
   }
+}
+label span {
+  font-weight: normal;
 }

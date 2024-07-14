@@ -13,22 +13,30 @@
     </header>
     <main id="main">
       <div id="flex-about-inputs">
-        <div id="about" class="children">
+        <div id="about" class="card">
           <p class="box-title">About</p>
           <p style="margin: 20px">
-            <b>Never forget a thing!</b> This is a To-do list/Task Manager lets
+            <b>Never forget a thing!</b> This is an interactive To-do list/Task Manager which lets
             you add tasks to be done to the list through the task window. The
             tasks are arranged chronologically in the order you add them.
             <br />Once the task has been completed simply mark it as "done" and
             watch it vanish from your list. <br />Stay Organised &#x1F44D; !!
           </p>
         </div>
-        <div id="inputs" class="children">
+        <div id="inputs" class="card">
           <p class="box-title">Task</p>
           <label for="name">Name</label>
           <input type="text" class="input-fields" id="name" />
-          <label for="desc">Description</label>
-          <textarea class="input-fields" id="desc"></textarea>
+          <label for="descriptionInput">Description</label>
+          <textarea class="input-fields" id="descriptionInput"></textarea>
+          <div>
+            <label>Category <span>(Choose any one)</span></label>
+            <div id = "category-flex-div" onclick = selectedCategory(event)>
+              <div class = "category-item-div">Work</div>
+              <div class = "category-item-div">Personal</div>
+              <div class = "category-item-div">Other</div>
+            </div>
+          </div>
           <button class="add-clr" id="add_submit">Add</button>
         </div>
       </div>
