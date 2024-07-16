@@ -101,7 +101,7 @@ table tr th {
   font-size: 25px;
 }
 table tr td {
-  height: 25px;
+  line-height: 25px;
   font-size: 17px;
   word-break: break-word;
 }
@@ -120,7 +120,7 @@ table tr td:nth-child(4) {
 table tr th:nth-child(4) {
   width: 10vw;
 }
-td {
+td p{
   text-align: center;
 }
 
@@ -143,7 +143,16 @@ td {
   text-align:center;
 }
 .done-button{
+  display:block;
   padding:0px 8px;
+  margin:auto;
+}
+td{
+  text-align:center;
+}
+.task-names{
+  display:flex; 
+  align-items:center;
 }
 .deleting {
   height: 25px;
@@ -258,7 +267,12 @@ td {
 #clr-button {
   margin-left:1vw;
 }
-
+.category-icon-in-table{
+  width:15px;
+  height:15px;
+  position:relative;
+  left:0;
+}
 @keyframes clr_animation {
   from {
     opacity: 0;

@@ -1,4 +1,5 @@
-let allTaskArr=[];
+let selectedCategory = null;
+const allCategoryPngArr = ["./Icons/work.png","./Icons/personal.png","./Icons/otherCategory.png"];
 let button = document.getElementById("add_submit");
 button.addEventListener("click", addTask);
 document
@@ -8,6 +9,7 @@ const main = document.getElementById("main");
 let i = 0;
 let j;
 function addTask() {
+  console.log("selectedElem",selectedCategory);
   if (document.getElementById("name").value != "") {
     if (document.getElementById("congo") != null) {
       main.removeChild(document.getElementById("congo"));
@@ -37,16 +39,10 @@ function addTask() {
         </tr>`;
       main.appendChild(table);
     }
-    // allTaskArr.push({
-    //   name: document.getElementById("name").value,
-    //   description: document.getElementById("descriptionInput").value,
-    //   type:"all",
-    // });
-    console.log(allTaskArr);
       let row = document.createElement("tr");
       i++;
       row.innerHTML = `<td>${i}</td>
-        <td>${document.getElementById("name").value}</td>
+        <td ><div class="task-names"><img src =${selectedCategory} class = "category-icon-in-table"><p style = "margin:auto">${document.getElementById("name").value}</p></div></td>
         <td>${document.getElementById("descriptionInput").value}</td>
         <td><button class ="done-button">Done</button></td>`;
       document.getElementById("task-table").appendChild(row);
@@ -141,13 +137,19 @@ function onClickTaskNameHandler(event) {
     document.getElementById("descriptionInput").focus();
   }
 }
-function selectedCategory(event) {
+function selectCategory(event) {
   const categoryElements = document.getElementsByClassName("category-item-div");
-  for (i = 0; i < categoryElements.length; i++) {
-    if (categoryElements[i] === event.target) {
+  for (let i = 0; i < categoryElements.length; i++) {
+    if (categoryElements[i] === event.target || categoryElements[i] === event.target.parentNode || categoryElements[i] === event.target.parentNode.parentNode) {
       if (categoryElements[i].classList.contains("selected-category-item-div"))
-        categoryElements[i].classList.remove("selected-category-item-div");
-      else categoryElements[i].classList.add("selected-category-item-div");
+        {
+          selectedCategory = null;
+          categoryElements[i].classList.remove("selected-category-item-div");
+        }
+      else {
+        categoryElements[i].classList.add("selected-category-item-div");
+        selectedCategory = allCategoryPngArr[i];
+      }
     }
     else{
       if (categoryElements[i].classList.contains("selected-category-item-div"))
