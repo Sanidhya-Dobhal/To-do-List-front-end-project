@@ -8,6 +8,14 @@ document
 const main = document.getElementById("main");
 let i = 0;
 let j;
+function taskNameFocus()
+{
+  document.getElementById("name").setAttribute("placeholder","");
+}
+function taskDescFocus()
+{
+  document.getElementById("descriptionInput").setAttribute("placeholder","");
+}
 function addTask() {
   console.log("selectedElem",selectedCategory);
   if (document.getElementById("name").value != "") {
@@ -41,16 +49,26 @@ function addTask() {
     }
       let row = document.createElement("tr");
       i++;
-      row.innerHTML = `<td>${i}</td>
-        <td ><div class="task-names"><img src =${selectedCategory} class = "category-icon-in-table"><p style = "margin:auto">${document.getElementById("name").value}</p></div></td>
-        <td>${document.getElementById("descriptionInput").value}</td>
+      row.innerHTML = selectedCategory===null?`<td>${i}</td>
+        <td ><div class="task-names"><p style = "margin-left:8px;">${document.getElementById("name").value}</p></div></td>
+        <td style = "padding:0px 8px;">${document.getElementById("descriptionInput").value}</td>
+        <td><button class ="done-button">Done</button></td>`:
+        `<td>${i}</td>
+        <td ><div class="task-names"><img src =${selectedCategory} class = "category-in-table"><p style = "margin-left:8px;">${document.getElementById("name").value}</p></div></td>
+        <td style = "padding:0px 8px;">${document.getElementById("descriptionInput").value}</td>
         <td><button class ="done-button">Done</button></td>`;
-      document.getElementById("task-table").appendChild(row);
+      document.getElementById("task-table").getElementsByTagName('tbody')[0].appendChild(row);
     document
       .getElementsByClassName("done-button")
       [i - 1].addEventListener("click", taskDone);
+      //Resting input fields
     document.getElementsByTagName("input")[0].value = null; //after each task is added the task input is
     document.getElementsByTagName("textarea")[0].value = null; //cleared and made empty for the next task
+    const categoryElements = document.getElementsByClassName("category-item-div");
+    for (let i = 0; i < categoryElements.length; i++) {
+      selectedCategory = null;
+      categoryElements[i].classList.remove("selected-category-item-div");
+    }
   }
 }
 function clearTable() {
@@ -78,20 +96,23 @@ function clearTable() {
   }
 }
 function taskDone(event) {
-  const all_del = document.getElementsByClassName("done-button");
-  for (j = 0; j < all_del.length; j++) {
-    if (all_del[j] === event.target) {
-      let del_row = document.getElementsByTagName("tr")[j + 1];
+  const allDeleteButtons = document.getElementsByClassName("done-button");
+  for (j = 0; j < allDeleteButtons.length; j++) {
+    if (allDeleteButtons[j] === event.target) {
+      let delRow = document.getElementsByTagName("tr")[j + 1];
       let k = 0;
-      all_del[j].classList.add("deleting");
-      all_del[j].outerHTML = "<p style = background-color:white;>&#128077</p>";
-      for (k = 0; k < 4; k++) del_row.children[k].classList.add("deleting");
+      allDeleteButtons[j].classList.add("deleting");
+      allDeleteButtons[j].outerHTML = "<p style = background-color:white;>&#128077</p>";
+      for (k = 0; k < 4; k++) {
+        delRow.children[k].classList.add("deleting");
+        delRow.getElementsByClassName("category-in-table")[0]?.classList.add("icon-removing-size-decrease");
+      }
       var buttons = document.getElementsByTagName("button");
       for (k = 0; k < buttons.length; k++) {
         buttons[k].disabled = true;
       }
       setTimeout(function () {
-        document.getElementById("task-table").removeChild(del_row);
+        document.getElementById("task-table").getElementsByTagName("tbody")[0].removeChild(delRow);
         for (k = 0; k < buttons.length; k++) {
           buttons[k].disabled = false;
         }

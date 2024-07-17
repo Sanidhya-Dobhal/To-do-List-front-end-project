@@ -9,7 +9,7 @@ body {
 
 .input-fields {
   display: block;
-  margin: 3vh auto;
+  margin: 20px auto;
   width: 35vw;
   padding-left: 4px;
 }
@@ -108,6 +108,7 @@ table tr td {
 table tr td:nth-child(1) {
   width: 7vw;
   border-left: 2px solid black;
+  text-align:center;
 }
 
 table tr th:nth-child(1) {
@@ -147,9 +148,6 @@ td p{
   padding:0px 8px;
   margin:auto;
 }
-td{
-  text-align:center;
-}
 .task-names{
   display:flex; 
   align-items:center;
@@ -158,12 +156,26 @@ td{
   height: 25px;
   opacity: 1;
   animation-name: removal;
-  animation-duration: 1s;
+  animation-duration:1s;
   animation-timing-function: linear;
 }
 .selected-category-item-div{
   color:white;
   background-color:rgb(25,135,84);
+}
+.icon-removing-size-decrease{
+  animation-name:icon-size-decrease;
+  animation-duration:1s;
+}
+@keyframes icon-size-decrease{
+  from{
+    height:15px;
+    width:15px;
+  }
+  to{
+    width:0px;
+    height:0px;
+  }
 }
 @keyframes removal {
   from {
@@ -172,6 +184,7 @@ td{
     height: 25px;
     font-size: 17px;
     opacity: 1;
+    line-height:25px;
   }
 
   to {
@@ -180,6 +193,7 @@ td{
     height: 1px;
     font-size: 0px;
     opacity: 0;
+    line-height:0px;
   }
 }
 
@@ -267,11 +281,13 @@ td{
 #clr-button {
   margin-left:1vw;
 }
-.category-icon-in-table{
+.category-in-table{
   width:15px;
   height:15px;
-  position:relative;
-  left:0;
+  margin-left:8px;
+}
+.category-svg{
+  margin-top:4px;
 }
 @keyframes clr_animation {
   from {

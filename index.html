@@ -27,27 +27,27 @@
         <div id="inputs" class="card">
           <p class="box-title">Task</p>
           <label for="name">Name</label>
-          <input type="text" class="input-fields" id="name" />
+          <input type="text" class="input-fields" id="name" placeholder="Study" onfocus ="taskNameFocus()"/>
           <label for="descriptionInput">Description</label>
-          <textarea class="input-fields" id="descriptionInput"></textarea>
+          <textarea class="input-fields" id="descriptionInput" placeholder="Need to study async and await functions" onfocus="taskDescFocus()"></textarea>
           <div>
-            <label>Category <span>(Choose any one)</span></label>
+            <label>Category(Choose any one)</label>
             <div id="category-flex-div" onclick="selectCategory(event)">
               
               <div class="category-item-div">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class = "category-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.4399 5.75H1.56006M12.5 9.5C10.4253 9.5 7.5 9.5 7.5 9.5M18.5 6.25164V16.375C18.5 17.5486 17.5486 18.5 16.375 18.5H3.625C2.4514 18.5 1.5 17.5486 1.5 16.375V6.25164C1.5 5.92175 1.57681 5.59638 1.72434 5.30132L3.1845 2.381C3.45447 1.84107 4.00632 1.5 4.60999 1.5H15.39C15.9937 1.5 16.5455 1.84107 16.8155 2.381L18.2757 5.30132C18.4232 5.59638 18.5 5.92175 18.5 6.25164Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <p>Work</p></div>
               <div class="category-item-div">
-                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class = "category-svg" width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.3999 19.5124C1.3999 15.7369 4.55419 12.6762 10.9999 12.6762C17.4456 12.6762 20.5999 15.7369 20.5999 19.5124C20.5999 20.1131 20.1617 20.6 19.6211 20.6H2.37873C1.83814 20.6 1.3999 20.1131 1.3999 19.5124Z" stroke="currentColor" stroke-width="2"/>
                   <path d="M14.5999 5.00002C14.5999 6.98825 12.9881 8.60002 10.9999 8.60002C9.01168 8.60002 7.3999 6.98825 7.3999 5.00002C7.3999 3.0118 9.01168 1.40002 10.9999 1.40002C12.9881 1.40002 14.5999 3.0118 14.5999 5.00002Z" stroke="currentColor" stroke-width="2"/>
                   </svg>
                 <p>Personal</p>
               </div>
               <div class="category-item-div">
-                <svg class="svg-icon" style="width: 20px; height: 20px; fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M272.60928 122.88H296.96a170.20928 170.20928 0 0 1 170.27072 170.20928v194.56h-194.56A170.20928 170.20928 0 0 1 102.4 317.44v-24.35072A170.20928 170.20928 0 0 1 272.60928 122.88z m0 413.40928h194.56v194.56A170.20928 170.20928 0 0 1 296.98048 901.12h-24.3712A170.20928 170.20928 0 0 1 102.4 730.91072V706.56a170.20928 170.20928 0 0 1 170.20928-170.27072zM686.08 122.88h24.35072A170.20928 170.20928 0 0 1 880.64 293.08928V317.44a170.20928 170.20928 0 0 1-170.20928 170.27072h-194.56v-194.56A170.20928 170.20928 0 0 1 686.05952 122.88h0.02048z m-170.27072 413.40928h194.56A170.20928 170.20928 0 0 1 880.64 706.56v24.35072A170.20928 170.20928 0 0 1 710.43072 901.12H686.08a170.20928 170.20928 0 0 1-170.27072-170.20928v-194.62144z"  /></svg>
+                <svg class="category-svg" style="width: 20px; height: 20px; fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M272.60928 122.88H296.96a170.20928 170.20928 0 0 1 170.27072 170.20928v194.56h-194.56A170.20928 170.20928 0 0 1 102.4 317.44v-24.35072A170.20928 170.20928 0 0 1 272.60928 122.88z m0 413.40928h194.56v194.56A170.20928 170.20928 0 0 1 296.98048 901.12h-24.3712A170.20928 170.20928 0 0 1 102.4 730.91072V706.56a170.20928 170.20928 0 0 1 170.20928-170.27072zM686.08 122.88h24.35072A170.20928 170.20928 0 0 1 880.64 293.08928V317.44a170.20928 170.20928 0 0 1-170.20928 170.27072h-194.56v-194.56A170.20928 170.20928 0 0 1 686.05952 122.88h0.02048z m-170.27072 413.40928h194.56A170.20928 170.20928 0 0 1 880.64 706.56v24.35072A170.20928 170.20928 0 0 1 710.43072 901.12H686.08a170.20928 170.20928 0 0 1-170.27072-170.20928v-194.62144z"  /></svg>
                 <p>Other</p>
               </div>
             </div>
