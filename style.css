@@ -78,6 +78,7 @@ table {
   width: 85vw;
   margin: 0 auto;
   background-color: rgb(239, 243, 213);
+  margin-bottom:16px;
 }
 
 table tr {
@@ -121,9 +122,6 @@ table tr td:nth-child(4) {
 table tr th:nth-child(4) {
   width: 10vw;
 }
-td p{
-  text-align: center;
-}
 
 #congo {
   text-align: center;
@@ -136,7 +134,7 @@ td p{
 #category-flex-div{
   display:flex;
   flex-direction:row; 
-  margin: 3vh 6vw;
+  margin: 20px 6vw;
 }
 .category-item-div{
   width:25%;

@@ -52,25 +52,18 @@ https://github.com/Sanidhya-Dobhal/To-do-List-front-end-project/assets/118712234
 ## Screenshots
 
 ### For bigger display screens like laptops and desktops
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.18.42 PM.png">
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.15.30 PM.png">
-<img src ="Screenshots/Screenshot 2023-07-29 at 1.16.50 PM.png">
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.36.29 PM.png">
-<img src ="Screenshots/Screenshot 2023-07-29 at 1.36.34 PM.png">
+<img src = "Screenshots/normalScreen.png">
+<img src = "Screenshots/TaskForBigScreen.png">
+<img src = "Screenshots/clearListConfirm.png">
+<img src ="Screenshots/listCleared.png">
 <div style ="height:20px;"></div>
 The above message is displayed when the list is cleared by using the "Clear List" button 
 <div style ="height:20px;"></div>
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.18.08 PM.png">
+<img src = "Screenshots/taskCompleted.png">
 <div style ="height:20px;"></div>
 
 The above message is displayed when the tasks are marked as "done" and then the list is cleared
 
-### For smaller display screens like phones 
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.19.04 PM.png">
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.16.15 PM.png">
-<img src ="Screenshots/Screenshot 2023-07-29 at 1.16.39 PM.png">
-<img src ="Screenshots/Screenshot 2023-07-29 at 1.48.20 PM.png">
-<img src = "Screenshots/Screenshot 2023-07-29 at 1.18.22 PM.png">
 
 ## Contact
 
