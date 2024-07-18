@@ -73,7 +73,12 @@ button:hover {
   font-size: 2vw;
   font-weight: 700;
 }
-
+#name::placeholder{
+  opacity:0.6;
+}
+#descriptionInput::placeholder{
+  opacity:0.6;
+}
 table {
   width: 85vw;
   margin: 0 auto;
@@ -81,48 +86,39 @@ table {
   margin-bottom:16px;
 }
 
-table tr {
+tr {
   animation-name: rowadd;
   animation-duration: 0.5s;
   width: 20vw;
 }
 
-table tr th {
+tr th {
   border-right: 2px solid black;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
-table tr td {
+tr td {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   padding: 3px;
 }
-table tr th {
+tr th {
   height: 40px;
   font-size: 25px;
 }
-table tr td {
+tr td {
   line-height: 25px;
   font-size: 17px;
   word-break: break-word;
 }
-table tr td:nth-child(1) {
+tr td:nth-child(1), table tr th:nth-child(1) {
   width: 7vw;
   border-left: 2px solid black;
   text-align:center;
 }
-
-table tr th:nth-child(1) {
-  width: 7vw;
-  border-left: 2px solid black;
-}
-table tr td:nth-child(4) {
+tr td:nth-child(4), table tr th:nth-child(4) {
   width: 10vw;
 }
-table tr th:nth-child(4) {
-  width: 10vw;
-}
-
 #congo {
   text-align: center;
   color: rgb(0, 212, 0);
@@ -148,7 +144,9 @@ table tr th:nth-child(4) {
 }
 .task-names{
   display:flex; 
-  align-items:center;
+}
+.task-names-sm{
+  display:block;
 }
 .deleting {
   height: 25px;
@@ -283,6 +281,7 @@ table tr th:nth-child(4) {
   width:15px;
   height:15px;
   margin-left:8px;
+  margin-top:5px;
 }
 .category-svg{
   margin-top:4px;
@@ -345,7 +344,7 @@ table tr th:nth-child(4) {
     font-size: 23px;
   }
 }
-@media screen and (max-width: 389px) {
+@media screen and (max-width:390px) {
   .input-fields {
     width: 272px;
   }

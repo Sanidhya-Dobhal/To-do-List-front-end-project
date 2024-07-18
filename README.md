@@ -15,15 +15,17 @@ This is a To-do list/Task Manager web application that helps you stay organized 
 
 ## Features
 
-- Add tasks with a name and description.
-- When the first task is added a new table is created with serial number , task name and description and actions available for the task to be done.
+- Add tasks with a name, description and a task category.
+- Category selection through <u>custom radio buttons</u>
+- When the first task is added a new table is created with serial number , task name and description, category  and actions available for the task to be done.
 - Tasks are displayed in chronological order.
 - Mark tasks as "done" to remove them from the list.
-- Automatic reduction of serial number when task is completed .
+- <u>Automatic reduction of serial number</u> when task is completed.
 - Additionally, there is a "Clear List" option that allows users to remove all tasks from the list at once. This feature provides a quick way to reset the task manager and start afresh without having to delete tasks individually.
-- Simple ,interactive and user-friendly interface .
+- Simple ,interactive and user-friendly interface.
 - Animations have been extensively used
-- Fully responsive web design .
+- Fully responsive web design.
+- <b>Element's width specific responsiveness</b> also applied using the function <u>taskNameWidthHandler</u> for <u>resize</u> event and other places where the width of the task name column changes.
 
 ## Getting Started
 
@@ -36,16 +38,14 @@ Alternatively, you can also host the application on a web server of your choice.
 
 ## Usage
 
-1. Open the application in your web browser.
-2. In the "Task" section, enter the name and description of the task you want to add.
+1. Open the application in a web browser.
+2. In the "Task" section, enter the name and description of the task you want to add and select one category.
 3. Click the "Add" button to add the task to your to-do list.
 4. Once you complete a task, mark it as "done" to remove it from the list.
 
-## Demo Video
+## Try it out
 
-
-
-https://github.com/Sanidhya-Dobhal/To-do-List-front-end-project/assets/118712234/5680fd0b-5017-47b1-85b2-513d50532c06
+https://sanidhya-dobhal.github.io/To-do-List-front-end-project/
 
 
 

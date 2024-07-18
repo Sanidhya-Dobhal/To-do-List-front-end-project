@@ -1,23 +1,25 @@
 let selectedCategory = null;
-const allCategoryPngArr = ["./Icons/work.png","./Icons/personal.png","./Icons/otherCategory.png"];
+const allCategoryPngArr = [
+  "./Icons/work.png",
+  "./Icons/personal.png",
+  "./Icons/otherCategory.png",
+];
 let button = document.getElementById("add_submit");
 button.addEventListener("click", addTask);
 document
   .getElementById("name")
-  .addEventListener("keypress",onClickTaskNameHandler);
+  .addEventListener("keypress", onClickTaskNameHandler);
 const main = document.getElementById("main");
 let i = 0;
 let j;
-function taskNameFocus()
-{
-  document.getElementById("name").setAttribute("placeholder","");
+function taskNameFocus() {
+  document.getElementById("name").setAttribute("placeholder", "");
 }
-function taskDescFocus()
-{
-  document.getElementById("descriptionInput").setAttribute("placeholder","");
+function taskDescFocus() {
+  document.getElementById("descriptionInput").setAttribute("placeholder", "");
 }
 function addTask() {
-  console.log("selectedElem",selectedCategory);
+  console.log("selectedElem", selectedCategory);
   if (document.getElementById("name").value != "") {
     if (document.getElementById("congo") != null) {
       main.removeChild(document.getElementById("congo"));
@@ -47,28 +49,43 @@ function addTask() {
         </tr>`;
       main.appendChild(table);
     }
-      let row = document.createElement("tr");
-      i++;
-      row.innerHTML = selectedCategory===null?`<td>${i}</td>
-        <td ><div class="task-names"><p style = "margin-left:8px;">${document.getElementById("name").value}</p></div></td>
-        <td style = "padding:0px 8px;">${document.getElementById("descriptionInput").value}</td>
-        <td><button class ="done-button">Done</button></td>`:
-        `<td>${i}</td>
-        <td ><div class="task-names"><img src =${selectedCategory} class = "category-in-table"><p style = "margin-left:8px;">${document.getElementById("name").value}</p></div></td>
-        <td style = "padding:0px 8px;">${document.getElementById("descriptionInput").value}</td>
+    let row = document.createElement("tr");
+    i++;
+    row.innerHTML =
+      selectedCategory === null
+        ? `<td>${i}</td>
+        <td ><div class="task-names"><p style = "margin-left:8px;">${
+          document.getElementById("name").value
+        }</p></div></td>
+        <td style = "padding:0px 8px;">${
+          document.getElementById("descriptionInput").value
+        }</td>
+        <td><button class ="done-button">Done</button></td>`
+        : `<td>${i}</td>
+        <td ><div class="task-names"><img src =${selectedCategory} class = "category-in-table"><p style = "margin-left:8px;">${
+            document.getElementById("name").value
+          }</p></div></td>
+        <td style = "padding:0px 8px;">${
+          document.getElementById("descriptionInput").value
+        }</td>
         <td><button class ="done-button">Done</button></td>`;
-      document.getElementById("task-table").getElementsByTagName('tbody')[0].appendChild(row);
+    document
+      .getElementById("task-table")
+      .getElementsByTagName("tbody")[0]
+      .appendChild(row);
     document
       .getElementsByClassName("done-button")
       [i - 1].addEventListener("click", taskDone);
-      //Resting input fields
+    //Resting input fields
     document.getElementsByTagName("input")[0].value = null; //after each task is added the task input is
     document.getElementsByTagName("textarea")[0].value = null; //cleared and made empty for the next task
-    const categoryElements = document.getElementsByClassName("category-item-div");
+    const categoryElements =
+      document.getElementsByClassName("category-item-div");
     for (let i = 0; i < categoryElements.length; i++) {
       selectedCategory = null;
       categoryElements[i].classList.remove("selected-category-item-div");
     }
+    setTimeout(taskNameWidthHandler, 1);
   }
 }
 function clearTable() {
@@ -99,20 +116,26 @@ function taskDone(event) {
   const allDeleteButtons = document.getElementsByClassName("done-button");
   for (j = 0; j < allDeleteButtons.length; j++) {
     if (allDeleteButtons[j] === event.target) {
-      let delRow = document.getElementsByTagName("tr")[j + 1];
+      let delRow = document.getElementsByTagName("tr")[j + 1];//as the first row is the heading row
       let k = 0;
       allDeleteButtons[j].classList.add("deleting");
-      allDeleteButtons[j].outerHTML = "<p style = background-color:white;>&#128077</p>";
+      allDeleteButtons[j].outerHTML =
+        `<p style = "background-color:white; text-align:center;">&#128077</p>`;
       for (k = 0; k < 4; k++) {
         delRow.children[k].classList.add("deleting");
-        delRow.getElementsByClassName("category-in-table")[0]?.classList.add("icon-removing-size-decrease");
+        delRow
+          .getElementsByClassName("category-in-table")[0]
+          ?.classList.add("icon-removing-size-decrease");
       }
       var buttons = document.getElementsByTagName("button");
       for (k = 0; k < buttons.length; k++) {
         buttons[k].disabled = true;
       }
       setTimeout(function () {
-        document.getElementById("task-table").getElementsByTagName("tbody")[0].removeChild(delRow);
+        document
+          .getElementById("task-table")
+          .getElementsByTagName("tbody")[0]
+          .removeChild(delRow);
         for (k = 0; k < buttons.length; k++) {
           buttons[k].disabled = false;
         }
@@ -136,6 +159,7 @@ function taskDone(event) {
     }
     if (document.getElementsByClassName("done-button").length == 0)
       deleteTable();
+    taskNameWidthHandler();
   }, 1000);
 }
 
@@ -161,20 +185,42 @@ function onClickTaskNameHandler(event) {
 function selectCategory(event) {
   const categoryElements = document.getElementsByClassName("category-item-div");
   for (let i = 0; i < categoryElements.length; i++) {
-    if (categoryElements[i] === event.target || categoryElements[i] === event.target.parentNode || categoryElements[i] === event.target.parentNode.parentNode) {
-      if (categoryElements[i].classList.contains("selected-category-item-div"))
-        {
-          selectedCategory = null;
-          categoryElements[i].classList.remove("selected-category-item-div");
-        }
-      else {
+    if (
+      categoryElements[i] === event.target ||
+      categoryElements[i] === event.target.parentNode ||
+      categoryElements[i] === event.target.parentNode.parentNode
+    ) {
+      if (
+        categoryElements[i].classList.contains("selected-category-item-div")
+      ) {
+        selectedCategory = null;
+        categoryElements[i].classList.remove("selected-category-item-div");
+      } else {
         categoryElements[i].classList.add("selected-category-item-div");
         selectedCategory = allCategoryPngArr[i];
       }
-    }
-    else{
+    } else {
       if (categoryElements[i].classList.contains("selected-category-item-div"))
         categoryElements[i].classList.remove("selected-category-item-div");
     }
   }
 }
+
+function taskNameWidthHandler() {
+  if (document.querySelector("th:nth-child(2)")?.clientWidth < 100) {
+    const allTaskName = document.getElementsByClassName("task-names");
+      for (let i = 0;allTaskName.length!=0; i+0) {//While can be used, but using for as this is instructive for me that the allTaskName.length automatically -1 after each iteration
+        console.log(allTaskName.length);
+        allTaskName[i]?.classList.add("task-names-sm");
+        allTaskName[i]?.classList.remove("task-names");
+      }
+  } else {
+    const allTaskName = document.getElementsByClassName("task-names-sm");
+      for (let i = 0; allTaskName.length!=0; i+0) {
+        console.log(allTaskName[i]);
+        allTaskName[i]?.classList.add("task-names");
+        allTaskName[i]?.classList.remove("task-names-sm");
+      }
+  }
+}
+window.addEventListener("resize", taskNameWidthHandler);
