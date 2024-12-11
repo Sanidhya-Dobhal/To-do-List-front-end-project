@@ -9,7 +9,7 @@ body {
 
 .input-fields {
   display: block;
-  margin: 20px auto;
+  margin: 14px auto;
   width: 35vw;
   padding-left: 4px;
 }
@@ -28,7 +28,7 @@ textarea {
 header {
   height: 64px;
   background-color: black;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
@@ -37,7 +37,7 @@ header {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 button {
-  background-color: #3B71CA;
+  background-color: #3b71ca;
   border-radius: 20px;
   color: white;
   font-size: 16px;
@@ -52,7 +52,7 @@ button:hover {
   width: 100px;
   height: 30px;
   margin-bottom: 20px;
-  margin-top:15px;
+  margin-top: 15px;
 }
 
 #flex-about-inputs {
@@ -73,17 +73,17 @@ button:hover {
   font-size: 2vw;
   font-weight: 700;
 }
-#name::placeholder{
-  opacity:0.6;
+#name::placeholder {
+  opacity: 0.6;
 }
-#descriptionInput::placeholder{
-  opacity:0.6;
+#descriptionInput::placeholder {
+  opacity: 0.6;
 }
 table {
   width: 85vw;
   margin: 0 auto;
-  background-color: rgb(239, 243, 213);
-  margin-bottom:16px;
+  background-color: #ffffff;
+  margin-bottom: 16px;
 }
 
 tr {
@@ -111,12 +111,14 @@ tr td {
   font-size: 17px;
   word-break: break-word;
 }
-tr td:nth-child(1), table tr th:nth-child(1) {
+tr td:nth-child(1),
+table tr th:nth-child(1) {
   width: 7vw;
   border-left: 2px solid black;
-  text-align:center;
+  text-align: center;
 }
-tr td:nth-child(4), table tr th:nth-child(4) {
+tr td:nth-child(4),
+table tr th:nth-child(4) {
   width: 10vw;
 }
 #congo {
@@ -127,50 +129,54 @@ tr td:nth-child(4), table tr th:nth-child(4) {
   animation-name: congo_ani;
   animation-duration: 2s;
 }
-#category-flex-div{
-  display:flex;
-  flex-direction:row; 
-  margin: 20px 6vw;
+#category-flex-div {
+  display: flex;
+  flex-direction: row;
+  margin: 14px 6vw;
 }
-.category-item-div{
-  width:25%;
-  border:2px solid black;
-  text-align:center;
+.category-item-div {
+  width: 25%;
+  border: 2px solid black;
+  text-align: center;
 }
-.done-button{
-  display:block;
-  padding:0px 8px;
-  margin:auto;
+.done-button {
+  display: block;
+  padding: 0px 8px;
+  margin: auto;
 }
-.task-names{
-  display:flex; 
+.task-names {
+  display: flex;
 }
-.task-names-sm{
-  display:block;
+.task-names-sm {
+  display: block;
 }
 .deleting {
   height: 25px;
   opacity: 1;
   animation-name: removal;
-  animation-duration:1s;
+  animation-duration: 1s;
   animation-timing-function: linear;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
-.selected-category-item-div{
-  color:white;
-  background-color:rgb(25,135,84);
+.selected-category-item-div {
+  color: white;
+  background-color: rgb(25, 135, 84);
 }
-.icon-removing-size-decrease{
-  animation-name:icon-size-decrease;
-  animation-duration:1s;
+.icon-removing-size-decrease {
+  animation-name: icon-size-decrease;
+  animation-duration: 1s;
 }
-@keyframes icon-size-decrease{
-  from{
-    height:15px;
-    width:15px;
+@keyframes icon-size-decrease {
+  from {
+    height: 15px;
+    width: 15px;
+    margin-top: 5px;
   }
-  to{
-    width:0px;
-    height:0px;
+  to {
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
   }
 }
 @keyframes removal {
@@ -180,16 +186,20 @@ tr td:nth-child(4), table tr th:nth-child(4) {
     height: 25px;
     font-size: 17px;
     opacity: 1;
-    line-height:25px;
+    line-height: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 
   to {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 1px;
+    border-right: 0px solid black;
+    border-bottom: 0px solid black;
+    height: 0px;
     font-size: 0px;
     opacity: 0;
-    line-height:0px;
+    line-height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
@@ -275,16 +285,16 @@ tr td:nth-child(4), table tr th:nth-child(4) {
   color: green;
 }
 #clr-button {
-  margin-left:1vw;
+  margin-left: 1vw;
 }
-.category-in-table{
-  width:15px;
-  height:15px;
-  margin-left:8px;
-  margin-top:5px;
+.category-in-table {
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-top: 5px;
 }
-.category-svg{
-  margin-top:4px;
+.category-svg {
+  margin-top: 4px;
 }
 @keyframes clr_animation {
   from {
@@ -311,7 +321,7 @@ tr td:nth-child(4), table tr th:nth-child(4) {
   }
 }
 @media screen and (max-width: 725px) {
-  .card{
+  .card {
     margin: auto;
     width: 90vw;
   }
@@ -335,7 +345,9 @@ tr td:nth-child(4), table tr th:nth-child(4) {
   .input-fields {
     width: 70vw;
   }
-  #category-flex-div, .add-clr, label {
+  #category-flex-div,
+  .add-clr,
+  label {
     margin-left: 10vw;
   }
 }
@@ -344,7 +356,7 @@ tr td:nth-child(4), table tr th:nth-child(4) {
     font-size: 23px;
   }
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width: 390px) {
   .input-fields {
     width: 272px;
   }
