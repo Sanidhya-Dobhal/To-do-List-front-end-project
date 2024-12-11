@@ -7,10 +7,10 @@ const allCategoryPngArr = [
 let toDoList;
 let i = 0;
 const main = document.getElementById("main");
+function saveToLocalStorage() {
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
+}
 if (localStorage.getItem("toDoList")) {
-  function saveToLocalStorage() {
-    localStorage.setItem("toDoList", JSON.stringify(toDoList));
-  }
   toDoList = JSON.parse(localStorage.getItem("toDoList"));
 } else {
   toDoList = [];
